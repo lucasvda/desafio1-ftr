@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "- [ ]  Deve ser possível criar um link\r     - [ ]  Não deve ser possível criar um link com URL encurtada mal formatada\r     - [ ]  Não deve ser possível criar um link com URL encurtada já existente\r - [ ]  Deve ser possível deletar um link\r - [ ]  Deve ser possível obter a URL original por meio de uma URL encurtada\r - [ ]  Deve ser possível listar todas as URL’s cadastradas\r - [ ]  Deve ser possível incrementar a quantidade de acessos de um link\r - [ ]  Deve ser possível exportar os links criados em um CSV\r     - [ ]  Deve ser possível acessar o CSV por meio de uma CDN (Amazon S3, Cloudflare R2, etc)\r     - [ ]  Deve ser gerado um nome aleatório e único para o arquivo\r     - [ ]  Deve ser possível realizar a listagem de forma performática\r     - [ ]  O CSV deve ter campos como, URL original, URL encurtada, contagem de acessos e data de criação.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/infra/http/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@biomejs/biome": "^2.0.6",
+    "@types/node": "^24.0.10",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.0.1",
+    "fastify": "^5.4.0",
+    "fastify-type-provider-zod": "^5.0.1",
+    "zod": "^3.25.71"
+  }
+}
