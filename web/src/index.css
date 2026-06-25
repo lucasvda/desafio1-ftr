@@ -1,4 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #E8E8ED;
+  --color-card: #FFFFFF;
+  --color-primary: #6366F1;
+  --color-primary-dark: #4F46E5;
+  --color-text: #1F2937;
+  --color-muted: #6B7280;
+  --color-label: #9CA3AF;
+  --color-border: #E5E7EB;
+  --color-danger: #DC2626;
+  --color-link: #3B49DA;
+  --font-sans: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--color-bg);
+  font-family: var(--font-sans);
+  margin: 0;
+}
+
+@keyframes glitch {
+  0% { clip-path: inset(20% 0 60% 0); transform: translate(-2px, 2px); }
+  20% { clip-path: inset(60% 0 10% 0); transform: translate(2px, -1px); }
+  40% { clip-path: inset(40% 0 30% 0); transform: translate(-1px, 1px); }
+  60% { clip-path: inset(10% 0 70% 0); transform: translate(1px, -2px); }
+  80% { clip-path: inset(50% 0 20% 0); transform: translate(-2px, 1px); }
+  100% { clip-path: inset(30% 0 40% 0); transform: translate(2px, -1px); }
+}
+
+.glitch-text {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch-text::before {
+  color: #DC2626;
+  animation: glitch 0.3s infinite linear alternate-reverse;
+  z-index: -1;
+}
+
+.glitch-text::after {
+  color: #3B49DA;
+  animation: glitch 0.3s 0.15s infinite linear alternate-reverse;
+  z-index: -1;
+}
